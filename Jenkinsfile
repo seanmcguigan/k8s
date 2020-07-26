@@ -5,17 +5,16 @@
     }
   }
   stages {
-    stage('Run maven') {
+    stage('deploy') {
       steps {
-        sh 'set'
         sh "echo OUTSIDE_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}"
         container('maven') {
           sh 'echo MAVEN_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
           sh 'mvn -version'
         }
-        container('busybox') {
-          sh 'echo BUSYBOX_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
-          sh '/bin/busybox'
+        container('kubectl') {
+          sh 'echo KUBECTL_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
+          sh '/opt/bitnami/kubectl/bin/kubectl version'
         }
       }
     }
