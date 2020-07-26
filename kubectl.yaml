@@ -34,9 +34,6 @@ spec:
       value: jnlp
   - name: kubectl
     image: bitnami/kubectl:1.16.3
-    command:
-    - cat
-    tty: true
     env:
     - name: CONTAINER_ENV_VAR
       value: kubectl
