@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh '''
                     ls -lah
+                    echo "foo"
                 '''
             }
         }
