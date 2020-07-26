@@ -9,7 +9,7 @@
       steps {
         container('kubectl') {
           sh 'echo KUBECTL_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
-          sh '/opt/bitnami/kubectl/bin/kubectl version'
+          sh '/opt/bitnami/kubectl/bin/kubectl get nodes'
         }
       }
     }
