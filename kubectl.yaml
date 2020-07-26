@@ -28,6 +28,8 @@ metadata:
   labels:
     deployment: cms
 spec:
+  securityContext:
+    runAsUser: 1000
   containers:
   - name: jnlp
     env:
