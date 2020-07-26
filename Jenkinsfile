@@ -1,7 +1,7 @@
  pipeline {
   agent {
     kubernetes {
-      yamlFile 'examples/declarative_from_yaml_file/kubectl.yaml'
+      yamlFile 'kubectl.yaml'
     }
   }
   stages {
