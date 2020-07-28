@@ -12,7 +12,7 @@ pipeline {
             container('kubectl') {
               sh 'echo KUBECTL_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
               sh '/opt/bitnami/kubectl/bin/kubectl get nodes'
-              sh 'echo ${env.BRANCH_NAME}'
+              sh "echo ${env.BRANCH_NAME}"
             }
           }
         }
@@ -25,7 +25,7 @@ pipeline {
             container('kubectl') {
               sh 'echo KUBECTL_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
               sh '/opt/bitnami/kubectl/bin/kubectl get nodes'
-              sh 'echo ${env.BRANCH_NAME}'
+              sh "echo ${env.BRANCH_NAME}"
             }
           }
         }
