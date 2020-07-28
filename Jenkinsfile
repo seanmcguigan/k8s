@@ -4,8 +4,8 @@ pipeline {
       yamlFile 'kubectl.yaml'
     }
   }
-  if(env.BRANCH_NAME == 'master'){
-    stages {
+  stages {
+    if(env.BRANCH_NAME == 'master'){
       stage('deploy to cms staging') {
         steps {
           container('kubectl') {
@@ -14,6 +14,6 @@ pipeline {
           }
         }
       }
-    }
+    }           
   }
 }
